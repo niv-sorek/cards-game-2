@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
+
         android:id="@+id/main_LBL_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,6 +25,7 @@
         android:layout_below="@+id/main_LBL_title"
         android:gravity="center_vertical"
         android:paddingLeft="55dp"
+        android:paddingTop="20dp"
         android:paddingRight="55dp"
         android:weightSum="4">
 
@@ -47,14 +49,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/new_game"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/main_BTN_nextCard"
@@ -66,69 +68,97 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
 
         android:layout_alignParentBottom="true"
         android:background="#039BE5"
+        android:baselineAligned="false"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/player_a_name"
-                android:textAllCaps="true"
-                android:textColor="#76FF03"
-                android:textSize="30sp" />
+                android:layout_weight="5"
+                android:gravity="center"
 
-            <TextView
-                android:id="@+id/main_LBL_p1_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/initial_score_str"
-                android:textAllCaps="true"
-                android:textColor="#76FF03"
-                android:textSize="30sp" />
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/player_a_name"
+                    android:textAllCaps="true"
+                    android:textColor="#76FF03"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/main_LBL_p1_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_score_str"
+                    android:textAllCaps="true"
+                    android:textColor="#76FF03"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:textAlignment="center">
+            android:layout_weight="1">
 
-            <TextView
-
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/player_b_name"
-                android:textAllCaps="true"
-                android:textColor="#76FF03"
-                android:textSize="30sp" />
+                android:layout_weight="5"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textAlignment="center">
 
-            <TextView
-                android:id="@+id/main_LBL_p2_score"
+                <TextView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text='@string/initial_score_str'
-                android:textAllCaps="true"
-                android:textColor="#76FF03"
-                android:textSize="30sp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/player_b_name"
+                    android:textAllCaps="true"
+                    android:textColor="#76FF03"
+                    android:textSize="30sp" />
 
+                <TextView
+                    android:id="@+id/main_LBL_p2_score"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@string/initial_score_str'
+                    android:textAllCaps="true"
+                    android:textColor="#76FF03"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
-        <!--Light Blue Color-->
 
 
     </LinearLayout>

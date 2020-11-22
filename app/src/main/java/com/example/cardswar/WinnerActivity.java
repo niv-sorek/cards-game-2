@@ -18,7 +18,7 @@ public class WinnerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner);
         Intent intent = getIntent();
-        this.winner = intent.getIntExtra("winner", -1); //if it's a string you stored.
+        this.winner = intent.getIntExtra("winner", -1);
         findViews();
         initViews();
     }
@@ -29,7 +29,7 @@ public class WinnerActivity extends AppCompatActivity {
             this.winner_LBL_name.setText(R.string.player_a_name);
         else if (this.winner == P2)
             this.winner_LBL_name.setText(R.string.player_b_name);
-        else this.winner_LBL_name.setText("Tie");
+        else this.winner_LBL_name.setText(R.string.tie_message);
     }
 
     private void findViews() {
