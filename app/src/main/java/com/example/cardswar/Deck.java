@@ -32,6 +32,6 @@ public class Deck {
     }
 
     public Stack<Card> getDeck() {
-    return this.cards;
+        return this.cards;
     }
 }
