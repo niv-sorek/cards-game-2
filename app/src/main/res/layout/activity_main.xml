@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_casino_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/main_LBL_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/gameTitle"
+        android:textAllCaps="true"
+        android:textColor="#F44336"
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_LBL_title"
+        android:gravity="center_vertical"
+        android:paddingLeft="55dp"
+        android:paddingRight="55dp"
+        android:weightSum="4">
+
+
+        <ImageView
+            android:id="@+id/main_IMG_card1"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="2"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:id="@+id/main_IMG_card2"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="2"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_game"
+                android:visibility="invisible"/>
+
+            <Button
+                android:id="@+id/main_BTN_nextCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:layout_alignParentBottom="true"
+        android:background="#039BE5"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/player_a_name"
+                android:textAllCaps="true"
+                android:textColor="#76FF03"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/main_LBL_p1_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initial_score_str"
+                android:textAllCaps="true"
+                android:textColor="#76FF03"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/player_b_name"
+                android:textAllCaps="true"
+                android:textColor="#76FF03"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/main_LBL_p2_score"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@string/initial_score_str'
+                android:textAllCaps="true"
+                android:textColor="#76FF03"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+        <!--Light Blue Color-->
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

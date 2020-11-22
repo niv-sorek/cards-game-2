@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:background="@drawable/img_casino_bg"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    tools:context=".WinnerActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/winner_LBL_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:text="@string/winner_theWinner"
+            android:textAllCaps="true"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/winner_IMG_winner"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:src="@drawable/img_winner"
+
+            />
+
+        <TextView
+            android:id="@+id/winner_lbl_winnerName"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/new_game" />
+    </LinearLayout>
+</RelativeLayout>
