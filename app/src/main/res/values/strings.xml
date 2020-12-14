@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CardsGame</string>
-    <string name="player_a_name">Player A</string>
+    <string name="player_a_name">You</string>
     <string name="initial_score_str">-</string>
-    <string name="player_b_name">Player B</string>
+    <string name="player_b_name">Droid</string>
     <string name="gameTitle">War</string>
     <string name="play">Play</string>
     <string name="game_finished">Game finished</string>

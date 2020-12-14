@@ -8,6 +8,7 @@ import java.util.Stack;
 public class Deck {
     public static final int CARDS_NUMBERS = 13;
     public static final int FIRST_CARD_NUM = 1;
+    public static final int DECK_CAPACITY = Deck.CARDS_NUMBERS * cardSymbol.values().length;
     private final Stack<Card> cards;
 
     public Deck() {
@@ -26,7 +27,9 @@ public class Deck {
             return this.cards.pop();
         else return null;
     }
-
+    public int getRemaining(){
+        return this.getDeck().size();
+    }
     public boolean isEmpty() {
         return this.cards.isEmpty();
     }
