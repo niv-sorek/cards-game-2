@@ -35,15 +35,14 @@ public class ShowHighScores extends AppCompatActivity {
         this.highscores = Utils.getDataFromSharedPreferences(this);
         List<String> names = new ArrayList<>();
         if (highscores != null) {
-            int place=1;
+            int place = 1;
             for (Highscore h : highscores) {
 
-                names.add(String.format("%-20d|%-40s|%-3d",place++, h.getName(), h.getScore()));
+                names.add(String.format("%-20d|%-40s|%-3d", place++, h.getName(), h.getScore()));
             }
-            ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names);
+            ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, names );
             scores_LST_scores.setAdapter(adapter);
-            //scores_LST_scores.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-           // scores_LST_scores.setTextDirection(View.TEXT_DIRECTION_LTR);
+
         }
     }
 
