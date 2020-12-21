@@ -87,7 +87,7 @@ public class WinnerActivity extends AppCompatActivity {
             this.winner_LBL_name.setText("Winner!");
             this.winner_IMG_winner.setImageResource(R.drawable.img_winner);
             try {
-                mp.setDataSource(this, Uri.parse("https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg"));
+                mp.setDataSource(this, Uri.parse(getString(R.string.winner_WAV_applause)));
                 mp.prepare();
                 mp.start();
             } catch (Exception e) {

@@ -9,6 +9,8 @@
     <string name="new_game">New Game</string>
     <string name="winner_theWinner">The winner is:</string>
     <string name="tie_message">It\'s a Tie</string>
+    <string name="game_WAV_blip">https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg</string>
+    <string name="winner_WAV_applause">https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.

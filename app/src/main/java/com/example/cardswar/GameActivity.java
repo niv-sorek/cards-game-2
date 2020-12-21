@@ -158,7 +158,7 @@ public class GameActivity extends AppCompatActivity {
     private void playBlip() {
         try {
             mp = new MediaPlayer();
-            mp.setDataSource(this, Uri.parse("https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"));
+            mp.setDataSource(this, Uri.parse(getString(R.string.game_WAV_blip)));
             mp.setVolume(0.3f, 0.3f);
             mp.prepare();
             if (mp != null && !timerOn) { // Dont play sounds when on AUTOGAME mode
