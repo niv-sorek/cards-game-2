@@ -1,5 +1,7 @@
 package com.example.cardswar;
 
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
@@ -38,12 +40,13 @@ public class ShowHighScores extends AppCompatActivity {
             int place = 1;
             for (Highscore h : highscores) {
 
-                names.add(String.format("%-20d|%-40s|%-3d", place++, h.getName(), h.getScore()));
+                names.add(String.format("%-20d%-3d%40s", place++, h.getScore(), h.getName()));
             }
-            ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, names );
+            ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, names);
             scores_LST_scores.setAdapter(adapter);
 
         }
+
     }
 
     public List<Highscore> getHighscores() {

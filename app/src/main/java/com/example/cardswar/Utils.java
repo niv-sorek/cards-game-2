@@ -20,6 +20,7 @@ public class Utils {
     private static final String PREFS_TAG = "SP";
     private static final String SCORES_TAG = "scores";
 
+
     public static void hideStatusBar(AppCompatActivity activity) {
         activity.requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
         Objects.requireNonNull(activity.getSupportActionBar()).hide(); // hide the title bar

@@ -6,8 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
@@ -40,7 +44,7 @@ public class GameActivity extends AppCompatActivity {
     private Switch game_SWT_auto;
     private ProgressBar game_PRG_gameProgress;
     private TextView game_TXT_popup;
-
+    private MediaPlayer mp;
     private Game gameManager;
 
     private final Timer timer = new Timer();
@@ -51,6 +55,8 @@ public class GameActivity extends AppCompatActivity {
     private double longitude;
     private boolean isUp;
     private View myView;
+    private Vibrator vibrator;
+
 
     private void startNewGame() {
 
@@ -96,6 +102,9 @@ public class GameActivity extends AppCompatActivity {
         if (gameManager.getRow() >= Game.MIN_ROW_BONUS) {
             game_TXT_popup.setText(gameManager.getRow() + " In a row!");
             slideUp(myView);
+            playBlip();
+            vibrate();
+
         }
         this.game_PRG_gameProgress.setProgress(this.gameManager.getProgress());
         this.txtPlayer1Score.setText("" + gameManager.getScores()[P1]);
@@ -145,7 +154,20 @@ public class GameActivity extends AppCompatActivity {
         myView.setVisibility(View.INVISIBLE);
         isUp = false;
         this.game_PRG_gameProgress.setMax(Deck.DECK_CAPACITY);
+        this.vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+    }
 
+    private void playBlip() {
+        try {
+            mp = new MediaPlayer();
+            mp.setDataSource(this, Uri.parse("https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"));
+            mp.setVolume(0.3f, 0.3f);
+            mp.prepare();
+            if (mp != null && !timerOn) { // Dont play sounds when on AUTOGAME mode
+                mp.start();
+            }
+        } catch (Exception e) {
+        }
     }
 
     private void initTimer() {
@@ -210,6 +232,16 @@ public class GameActivity extends AppCompatActivity {
         animate.setFillAfter(true);
         view.startAnimation(animate);
         isUp = true;
+    }
+
+    private void vibrate() {
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            //deprecated in API 26
+            vibrator.vibrate(200);
+        }
     }
 
     // slide the view from its current position to below itself

@@ -4,6 +4,7 @@ public class Highscore implements Comparable<Highscore> {
     private String name;
     private int score;
     private double lat, lng;
+    private boolean touched;
 
     public Highscore() {
     }
@@ -56,5 +57,13 @@ public class Highscore implements Comparable<Highscore> {
     @Override
     public int compareTo(Highscore o) {
         return o.score-this.score;
+    }
+
+    public void setTouched(boolean touched) {
+        this.touched = touched;
+    }
+
+    public boolean getTouched() {
+        return touched;
     }
 }

@@ -14,6 +14,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -23,6 +24,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class MapsFragment extends Fragment {
+    private List<MarkerOptions> markers = new ArrayList<>();
+
+
 
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -37,7 +41,7 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            List<MarkerOptions> markers = new ArrayList<>();
+        markers = new ArrayList<>();
             ShowHighScores activity = (ShowHighScores) getActivity();
             List<Highscore> highscores = Objects.requireNonNull(activity).getHighscores();
             if (highscores != null) {
@@ -52,11 +56,11 @@ public class MapsFragment extends Fragment {
                     }
                     LatLngBounds bounds = builder.build();
 
-                    int padding = 0; // offset from edges of the map in pixels
+                    int padding = 70; // offset from edges of the map in pixels
                     CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
                     for (MarkerOptions m : markers)
                         googleMap.addMarker(m);
-                    googleMap.setMaxZoomPreference(17);
+                    googleMap.setMaxZoomPreference(30);
                     googleMap.animateCamera(cu);
                 }
 

@@ -1,7 +1,8 @@
 package com.example.cardswar;
 
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
@@ -26,6 +27,13 @@ public class WinnerActivity extends AppCompatActivity {
     private double latitude;
     private double longitude;
     private Button winner_BTN_mainMenu;
+    private MediaPlayer mp;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(this.mp!= null )this.mp.stop();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +82,16 @@ public class WinnerActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        mp= new MediaPlayer();
         if (this.winner == P1) {
             this.winner_LBL_name.setText("Winner!");
             this.winner_IMG_winner.setImageResource(R.drawable.img_winner);
+            try {
+                mp.setDataSource(this, Uri.parse("https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg"));
+                mp.prepare();
+                mp.start();
+            } catch (Exception e) {
+            }
         } else if (this.winner == P2) {
             this.winner_LBL_name.setText("Game Over.");
             this.winner_IMG_winner.setImageResource(R.drawable.ic_sadface_foreground);
