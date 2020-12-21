@@ -103,8 +103,6 @@ public class GameActivity extends AppCompatActivity {
             game_TXT_popup.setText(gameManager.getRow() + " In a row!");
             slideUp(myView);
             playBlip();
-            vibrate();
-
         }
         this.game_PRG_gameProgress.setProgress(this.gameManager.getProgress());
         this.txtPlayer1Score.setText("" + gameManager.getScores()[P1]);
@@ -168,6 +166,7 @@ public class GameActivity extends AppCompatActivity {
             }
         } catch (Exception e) {
         }
+        vibrate();
     }
 
     private void initTimer() {
